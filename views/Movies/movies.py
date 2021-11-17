@@ -14,7 +14,6 @@ movies_ns = Namespace('movies')
 @movies_ns.route('/')
 class Movies_view(Resource):
     def get(self):
-        # movies_list = Movies.query.all()
         movies_list = db.session.query(Movies.id, Movies.title, Movies.year,
                                        Movies.description, Movies.trailer,
                                        Movies.genre_id,
